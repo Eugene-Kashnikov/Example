@@ -4,6 +4,7 @@ import io.qameta.allure.okhttp3.AllureOkHttp3;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import org.example.theCatApiTest.utils.LoggingInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,6 +22,7 @@ public class RestService {
         this.client = new OkHttpClient.Builder()
                 .readTimeout(200, TimeUnit.SECONDS)
                 .addInterceptor(new AllureOkHttp3())
+                .addInterceptor(new LoggingInterceptor())
                 .build();
     }
 }
