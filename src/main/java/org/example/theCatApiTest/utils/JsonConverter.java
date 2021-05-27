@@ -1,11 +1,11 @@
-package utils;
+package org.example.theCatApiTest.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import core.ResponsePojo;
+import org.example.theCatApiTest.core.ResponsePojo;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;

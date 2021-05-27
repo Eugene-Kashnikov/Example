@@ -1,8 +1,9 @@
-package core;
+package org.example.theCatApiTest.core;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.testng.Assert;
 
 import java.io.IOException;
 
@@ -24,6 +25,7 @@ public class GetReq extends RestService {
             return responsePojo;
         } catch (IOException e) {
             log.error("I/O exception: ", e);
+            Assert.fail();
         }
 
         return responsePojo;

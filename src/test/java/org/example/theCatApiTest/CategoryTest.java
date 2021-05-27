@@ -1,10 +1,12 @@
-import core.ResponsePojo;
+package org.example.theCatApiTest;
+
+import org.example.theCatApiTest.core.ResponsePojo;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pojo.Category;
-import request.CategoriesRequest;
-import utils.JsonConverter;
+import org.example.theCatApiTest.pojo.Category;
+import org.example.theCatApiTest.request.CategoriesRequest;
+import org.example.theCatApiTest.utils.JsonConverter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,7 +22,7 @@ public class CategoryTest {
 
     @BeforeMethod
     public void setUp() {
-        responsePojo = new core.ResponsePojo();
+        responsePojo = new ResponsePojo();
         jsonConverter = new JsonConverter();
         categoriesRequest = new CategoriesRequest();
     }

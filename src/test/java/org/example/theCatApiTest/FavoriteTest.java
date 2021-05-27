@@ -1,12 +1,16 @@
-import core.ResponsePojo;
+package org.example.theCatApiTest;
+
+import io.qameta.allure.Attachment;
 import lombok.extern.slf4j.Slf4j;
+import org.example.theCatApiTest.core.ResponsePojo;
+import org.example.theCatApiTest.pojo.*;
+import org.example.theCatApiTest.request.BreadRequest;
+import org.example.theCatApiTest.request.FavoritesRequest;
+import org.example.theCatApiTest.request.ImageRequest;
+import org.example.theCatApiTest.utils.Attach;
+import org.example.theCatApiTest.utils.JsonConverter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pojo.*;
-import request.BreadRequest;
-import request.FavoritesRequest;
-import request.ImageRequest;
-import utils.JsonConverter;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,18 +25,18 @@ public class FavoriteTest {
     private BreadRequest breadRequest;
     private ImageRequest imageRequest;
     private FavoritesRequest favoritesRequest;
+    public Attach attach = new Attach();
 
     @BeforeMethod
     public void setUp() {
         breadRequest = new BreadRequest();
-        responsePojo = new core.ResponsePojo();
+        responsePojo = new ResponsePojo();
         jsonConverter = new JsonConverter();
         imageRequest = new ImageRequest();
         favoritesRequest = new FavoritesRequest();
     }
 
     @Test
-
     public void FavoriteTest() {
 
         responsePojo = breadRequest.getBreadByName();
@@ -40,6 +44,10 @@ public class FavoriteTest {
         Breed myBreed = myBreads.get(0);
         assertEquals(responsePojo.getStatusCode(), 200);
         String breedId = myBreed.getId();
+        String breedName = myBreed.getName();
+        attach.setBread(breedName);
+        attach.setImage(breedId);
+
 
         responsePojo = imageRequest.getImageByID(breedId);
         assertEquals(responsePojo.getStatusCode(), 200);
@@ -51,7 +59,9 @@ public class FavoriteTest {
         String imageID = image.getId();
         String imageURL = image.getUrl();
 
-        responsePojo = favoritesRequest.saveImageInFavorites(bodyForSearch(imageID));
+        attach.setUrl(imageURL);
+
+        responsePojo = favoritesRequest.saveImageInFavorites(new Favourite(imageID));
         assertEquals(responsePojo.getStatusCode(), 200);
         Favourites favourites = jsonConverter.getEntity(responsePojo, Favourites.class);
         assertTrue(favourites.getMessage().contains("SUCCESS"));
@@ -75,11 +85,17 @@ public class FavoriteTest {
         List<FavouritesImage> favouritesImageAfterDelete = jsonConverter.getEntitiesFromArray(responsePojo, FavouritesImage.class);
         List<Integer> imageIdsFavoritesAfterDelete = favouritesImageAfterDelete.stream().map(FavouritesImage::getId).collect(Collectors.toList());
         assertFalse(imageIdsFavoritesAfterDelete.contains(imageIdFavourites));
+
+        attach.setBread(breedName);
+        attach.setImage(breedId);
+        attach.setUrl(imageURL);
+
+        saveParamIntoFile(attach);
     }
 
-    private Favourite bodyForSearch(String query) {
-        return Favourite.builder()
-                .image_id(query)
-                .build();
+    @Attachment
+    private String saveParamIntoFile(Attach attach) {
+        return attach.toString();
     }
+
 }

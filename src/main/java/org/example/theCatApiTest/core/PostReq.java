@@ -1,10 +1,11 @@
-package core;
+package org.example.theCatApiTest.core;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import org.testng.Assert;
 
 import java.io.IOException;
 
@@ -28,6 +29,7 @@ public class PostReq extends RestService {
                 responsePojo.setResponseBody(response.body().string());
             } catch (IOException e) {
                 log.error("I/O exception: ", e);
+                Assert.fail();
             }
         } else {
             body = RequestBody.create(bodys.toString(), JSON);
@@ -42,6 +44,7 @@ public class PostReq extends RestService {
                 responsePojo.setResponseBody(response.body().string());
             } catch (IOException e) {
                 log.error("I/O exception: ", e);
+                Assert.fail();
             }
         }
         return responsePojo;

@@ -1,13 +1,14 @@
-package request;
+package org.example.theCatApiTest.request;
 
-import core.DeleteReq;
-import core.GetReq;
-import core.PostReq;
+import org.example.theCatApiTest.core.DeleteReq;
+import org.example.theCatApiTest.core.GetReq;
+import org.example.theCatApiTest.core.PostReq;
 import io.qameta.allure.Step;
-import pojo.Favourite;
-import utils.ObjectMapping;
+import org.example.theCatApiTest.core.ResponsePojo;
+import org.example.theCatApiTest.pojo.Favourite;
+import org.example.theCatApiTest.utils.ObjectMapping;
 
-import static core.Urls.FAVORITES;
+import static org.example.theCatApiTest.core.Urls.FAVORITES;
 
 public class FavoritesRequest {
 
@@ -24,17 +25,17 @@ public class FavoritesRequest {
     }
 
     @Step("Add image in favourites")
-    public core.ResponsePojo saveImageInFavorites(Favourite body) {
+    public ResponsePojo saveImageInFavorites(Favourite body) {
         return postReq.doPost(FAVORITES, om.mapObjectToJsonNode(body), true);
     }
 
     @Step("Get my favorites image")
-    public core.ResponsePojo getMyFavorites() {
+    public ResponsePojo getMyFavorites() {
         return getReq.doGet(FAVORITES);
     }
 
     @Step("Delete image from favorites")
-    public core.ResponsePojo deleteImageOfFavorites(int param) {
+    public ResponsePojo deleteImageOfFavorites(int param) {
         return deleteReq.doDelete(FAVORITES + String.format("/%d", param));
     }
 

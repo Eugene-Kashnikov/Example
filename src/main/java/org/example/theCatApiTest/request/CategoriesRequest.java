@@ -1,9 +1,10 @@
-package request;
+package org.example.theCatApiTest.request;
 
-import core.GetReq;
+import org.example.theCatApiTest.core.GetReq;
 import io.qameta.allure.Step;
+import org.example.theCatApiTest.core.ResponsePojo;
 
-import static core.Urls.SEARCH_CATEGORIES;
+import static org.example.theCatApiTest.core.Urls.SEARCH_CATEGORIES;
 
 public class CategoriesRequest {
 
@@ -15,7 +16,7 @@ public class CategoriesRequest {
     }
 
     @Step("Get last activity {id}")
-    public core.ResponsePojo getAllCategories() {
+    public ResponsePojo getAllCategories() {
         return getReq.doGet(SEARCH_CATEGORIES);
     }
 
