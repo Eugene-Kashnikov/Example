@@ -1,5 +1,5 @@
 # ExampleTest Framework (API, GUI)
-Java quickstart project for test automation, UI acceptance and API acceptance testing. Created with lessons learned from a IT courses.
+The project is based on a test task for testing TheKatApi
 
 Tools:
 Maven
