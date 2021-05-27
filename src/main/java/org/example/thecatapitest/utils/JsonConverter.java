@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.thecatapitest.core.ResponsePojo;
 import lombok.extern.slf4j.Slf4j;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,7 +30,8 @@ public class JsonConverter {
             String targetArray = stringToJson(response.getResponseBody()).toString();
             targetEntities = om.readValue(targetArray, om.getTypeFactory().constructCollectionType(List.class, tClass));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("There was an error during PARSING I/O exception: ", e);
+            Assert.fail();
         }
         return targetEntities;
     }
@@ -40,7 +42,8 @@ public class JsonConverter {
             String targetArray = stringToJson(response.getResponseBody()).toString();
             targetEntity = om.readValue(targetArray, tClass);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log.error("There was an error during PARSING I/O exception: ", e);
+            Assert.fail();
         }
         return targetEntity;
     }
@@ -53,6 +56,7 @@ public class JsonConverter {
             return jsonObj;
         } catch (JsonProcessingException e) {
             log.error("Can't parse string: " + str);
+            Assert.fail();
         }
         return jsonObj;
     }

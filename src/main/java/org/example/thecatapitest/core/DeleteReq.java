@@ -23,7 +23,7 @@ public class DeleteReq extends RestService {
 
             return responsePojo;
         } catch (IOException e) {
-            log.error("I/O exception: ", e);
+            log.error("There was an error during DELETE I/O exception: ", e);
             Assert.fail();
         }
 

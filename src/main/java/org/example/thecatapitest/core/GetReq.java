@@ -24,7 +24,7 @@ public class GetReq extends RestService {
 
             return responsePojo;
         } catch (IOException e) {
-            log.error("I/O exception: ", e);
+            log.error("There was an error during GET I/O exception: ", e);
             Assert.fail();
         }
 

@@ -1,12 +1,13 @@
 package org.example.thecatapitest.request;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Step;
 import org.example.thecatapitest.core.DeleteReq;
 import org.example.thecatapitest.core.GetReq;
 import org.example.thecatapitest.core.PostReq;
-import io.qameta.allure.Step;
 import org.example.thecatapitest.core.ResponsePojo;
 import org.example.thecatapitest.pojo.Favourite;
-import org.example.thecatapitest.utils.ObjectMapping;
 
 import static org.example.thecatapitest.core.Urls.FAVORITES;
 
@@ -15,18 +16,18 @@ public class FavoritesRequest {
     private final PostReq postReq;
     private final GetReq getReq;
     private final DeleteReq deleteReq;
-    private ObjectMapping om;
+    private ObjectMapper om;
 
     public FavoritesRequest() {
         postReq = new PostReq();
         getReq = new GetReq();
         deleteReq = new DeleteReq();
-        om = new ObjectMapping();
+        om = new ObjectMapper();
     }
 
     @Step("Add image in favourites")
     public ResponsePojo saveImageInFavorites(Favourite body) {
-        return postReq.doPost(FAVORITES, om.mapObjectToJsonNode(body), true);
+        return postReq.doPost(FAVORITES, om.convertValue(body, JsonNode.class), true);
     }
 
     @Step("Get my favorites image")

@@ -37,7 +37,7 @@ public class FavoriteTest {
     }
 
     @Test
-    public void FavoriteTest() {
+    public void favoriteTest() {
 
         responsePojo = breadRequest.getBreadByName();
         List<Breed> myBreads = jsonConverter.getEntitiesFromArray(responsePojo, Breed.class);
@@ -47,7 +47,6 @@ public class FavoriteTest {
         String breedName = myBreed.getName();
         attach.setBread(breedName);
         attach.setImage(breedId);
-
 
         responsePojo = imageRequest.getImageByID(breedId);
         assertEquals(responsePojo.getStatusCode(), 200);
@@ -90,12 +89,11 @@ public class FavoriteTest {
         attach.setImage(breedId);
         attach.setUrl(imageURL);
 
-        saveParamIntoFile(attach);
+        saveParamInAttach(attach);
     }
 
     @Attachment
-    private String saveParamIntoFile(Attach attach) {
+    private String saveParamInAttach(Attach attach) {
         return attach.toString();
     }
-
 }

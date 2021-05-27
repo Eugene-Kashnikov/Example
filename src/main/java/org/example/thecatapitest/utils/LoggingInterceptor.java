@@ -40,6 +40,7 @@ public class LoggingInterceptor implements Interceptor {
         try {
             contentString = contentType.toString();
         } catch (NullPointerException e) {
+            log.error("There was an error during LOGGING NullPointerException: ", e);
             contentString = "delete";
         }
         if (contentString.contains("json")) {
