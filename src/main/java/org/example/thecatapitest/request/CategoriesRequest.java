@@ -1,10 +1,10 @@
-package org.example.theCatApiTest.request;
+package org.example.thecatapitest.request;
 
-import org.example.theCatApiTest.core.GetReq;
+import org.example.thecatapitest.core.GetReq;
 import io.qameta.allure.Step;
-import org.example.theCatApiTest.core.ResponsePojo;
+import org.example.thecatapitest.core.ResponsePojo;
 
-import static org.example.theCatApiTest.core.Urls.SEARCH_CATEGORIES;
+import static org.example.thecatapitest.core.Urls.SEARCH_CATEGORIES;
 
 public class CategoriesRequest {
 

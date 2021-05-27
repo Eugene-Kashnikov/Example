@@ -5,62 +5,69 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>theCatApiTest</artifactId>
+    <artifactId>thecatapitest</artifactId>
     <version>1.0-SNAPSHOT</version>
-           <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.0</version>
-                        <configuration>
-                            <source>8</source>
-                            <target>8</target>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
 
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.20</version>
-                        <configuration>
-                            <argLine>
-                                -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                            </argLine>
-                        </configuration>
-                        <dependencies>
-                            <dependency>
-                                <groupId>org.aspectj</groupId>
-                                <artifactId>aspectjweaver</artifactId>
-                                <version>${aspectj.version}</version>
-                            </dependency>
-                        </dependencies>
-                    </plugin>
-                    <plugin>
-                        <groupId>io.qameta.allure</groupId>
-                        <artifactId>allure-maven</artifactId>
-                        <version>2.10.0</version>
-                    </plugin>
-                </plugins>
-            </build>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <systemProperties>
+                        <property>
+                            <name>authkey</name>
+                            <value>${authkey}</value>
+                        </property>
+                    </systemProperties>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 
 
     <properties>
 
         <aspectj.version>1.8.10</aspectj.version>
-        <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <okhttp.version>4.4.0</okhttp.version>
         <jackson.version>2.10.3</jackson.version>
-        <suite.api.xml>src/main/resources/suite.xml</suite.api.xml>
         <slf4j.version>1.7.30</slf4j.version>
         <allure.version>2.13.9</allure.version>
         <logging.log4j.version>2.14.1</logging.log4j.version>
-        <testNG.version>7.4.0</testNG.version>
+        <testng.version>7.4.0</testng.version>
         <lombok.version>1.18.20</lombok.version>
         <assertj.version>3.19.0</assertj.version>
         <allure.okhttp.version>2.13.3</allure.okhttp.version>
         <allure.maven.version>2.10.0</allure.maven.version>
+        <java.version>8</java.version>
 
 
     </properties>
@@ -83,8 +90,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>${testNG.version}</version>
-            <scope>test</scope>
+            <version>${testng.version}</version>
         </dependency>
 
         <dependency>
@@ -139,13 +145,6 @@
             <artifactId>allure-okhttp3</artifactId>
             <version>${allure.okhttp.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>${testNG.version}</version>
-            <scope>compile</scope>
-        </dependency>
-     </dependencies>
+    </dependencies>
 
 </project>

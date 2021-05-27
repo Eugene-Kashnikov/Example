@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.core;
+package org.example.thecatapitest.core;
 
 public class Urls {
     public static final String SEARCH_BREED = "https://api.thecatapi.com/v1/breeds/search?q=Scottish%20Fold";

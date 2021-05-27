@@ -1,14 +1,14 @@
-package org.example.theCatApiTest.request;
+package org.example.thecatapitest.request;
 
-import org.example.theCatApiTest.core.DeleteReq;
-import org.example.theCatApiTest.core.GetReq;
-import org.example.theCatApiTest.core.PostReq;
+import org.example.thecatapitest.core.DeleteReq;
+import org.example.thecatapitest.core.GetReq;
+import org.example.thecatapitest.core.PostReq;
 import io.qameta.allure.Step;
-import org.example.theCatApiTest.core.ResponsePojo;
-import org.example.theCatApiTest.pojo.Favourite;
-import org.example.theCatApiTest.utils.ObjectMapping;
+import org.example.thecatapitest.core.ResponsePojo;
+import org.example.thecatapitest.pojo.Favourite;
+import org.example.thecatapitest.utils.ObjectMapping;
 
-import static org.example.theCatApiTest.core.Urls.FAVORITES;
+import static org.example.thecatapitest.core.Urls.FAVORITES;
 
 public class FavoritesRequest {
 

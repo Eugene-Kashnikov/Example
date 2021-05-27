@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.utils;
+package org.example.thecatapitest.utils;
 
 public class Attach {
     private String bread;

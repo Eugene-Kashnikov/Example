@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.core;
+package org.example.thecatapitest.core;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Request;

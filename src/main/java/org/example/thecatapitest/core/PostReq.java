@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.core;
+package org.example.thecatapitest.core;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.pojo;
+package org.example.thecatapitest.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

@@ -1,14 +1,14 @@
-package org.example.theCatApiTest;
+package org.example.thecatapitest;
 
 import io.qameta.allure.Attachment;
 import lombok.extern.slf4j.Slf4j;
-import org.example.theCatApiTest.core.ResponsePojo;
-import org.example.theCatApiTest.pojo.*;
-import org.example.theCatApiTest.request.BreadRequest;
-import org.example.theCatApiTest.request.FavoritesRequest;
-import org.example.theCatApiTest.request.ImageRequest;
-import org.example.theCatApiTest.utils.Attach;
-import org.example.theCatApiTest.utils.JsonConverter;
+import org.example.thecatapitest.core.ResponsePojo;
+import org.example.thecatapitest.pojo.*;
+import org.example.thecatapitest.request.BreadRequest;
+import org.example.thecatapitest.request.FavoritesRequest;
+import org.example.thecatapitest.request.ImageRequest;
+import org.example.thecatapitest.utils.Attach;
+import org.example.thecatapitest.utils.JsonConverter;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

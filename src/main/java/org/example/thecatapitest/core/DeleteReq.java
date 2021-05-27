@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.core;
+package org.example.thecatapitest.core;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Request;
@@ -11,7 +11,6 @@ import java.io.IOException;
 public class DeleteReq extends RestService {
 
     public ResponsePojo doDelete(String url) {
-        String bodyStr = null;
         req = new Request.Builder()
                 .url(url)
                 .delete()

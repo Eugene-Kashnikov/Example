@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.core;
+package org.example.thecatapitest.core;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

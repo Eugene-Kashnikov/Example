@@ -1,12 +1,12 @@
-package org.example.theCatApiTest;
+package org.example.thecatapitest;
 
-import org.example.theCatApiTest.core.ResponsePojo;
+import org.example.thecatapitest.core.ResponsePojo;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.example.theCatApiTest.pojo.Category;
-import org.example.theCatApiTest.request.CategoriesRequest;
-import org.example.theCatApiTest.utils.JsonConverter;
+import org.example.thecatapitest.pojo.Category;
+import org.example.thecatapitest.request.CategoriesRequest;
+import org.example.thecatapitest.utils.JsonConverter;
 
 import java.util.List;
 import java.util.stream.Collectors;

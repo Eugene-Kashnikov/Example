@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.utils;
+package org.example.thecatapitest.utils;
 
 
 import lombok.extern.slf4j.Slf4j;

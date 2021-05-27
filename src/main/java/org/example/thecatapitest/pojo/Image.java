@@ -1,4 +1,4 @@
-package org.example.theCatApiTest.pojo;
+package org.example.thecatapitest.pojo;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
