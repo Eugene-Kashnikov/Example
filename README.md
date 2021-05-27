@@ -1,5 +1,5 @@
 # ExampleTest Framework (API, GUI)
-The project is based on a test task for testing TheKatApi
+The project is based on a test task for testing TheCatApi
 
 Tools:
 * Maven
