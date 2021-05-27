@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 
-public class FavouritesResponse {
+public class Favourites {
     private int id;
     private String message;
 

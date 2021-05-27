@@ -2,23 +2,21 @@ package request;
 
 import core.GetReq;
 import io.qameta.allure.Step;
-import utils.ObjectMapping;
 
-import static core.Consts.SEARCHCATEGORIES;
+import static core.Urls.SEARCH_CATEGORIES;
 
 public class CategoriesRequest {
 
     private final GetReq getReq;
 
-    private ObjectMapping om = new ObjectMapping();
-
     public CategoriesRequest() {
+
         getReq = new GetReq();
     }
 
     @Step("Get last activity {id}")
     public core.ResponsePojo getAllCategories() {
-        return getReq.doGet(SEARCHCATEGORIES);
+        return getReq.doGet(SEARCH_CATEGORIES);
     }
 
 }

@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 
-public class FavouriteRequest {
+public class Favourite {
     private String image_id;
 }

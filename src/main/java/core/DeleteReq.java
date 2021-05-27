@@ -7,10 +7,7 @@ import okhttp3.Response;
 import java.io.IOException;
 
 @Slf4j
-public class DeleteReq extends RestService{
-
-
-    public DeleteReq() {}
+public class DeleteReq extends RestService {
 
     public ResponsePojo doDelete(String url) {
         String bodyStr = null;
@@ -23,7 +20,6 @@ public class DeleteReq extends RestService{
         try (Response response = client.newCall(req).execute()) {
             responsePojo.setStatusCode(response.code());
             responsePojo.setResponseBody(response.body().string());
-            response.close();
 
             return responsePojo;
         } catch (IOException e) {

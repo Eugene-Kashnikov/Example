@@ -1,4 +1,4 @@
-package core;
+package utils;
 
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Interceptor;
@@ -18,7 +18,7 @@ public class LoggingInterceptor implements Interceptor {
 
         Request request = chain.request();
 
-        long t1 = System.nanoTime();
+        long t1 = System.currentTimeMillis();
 
         log.info("========================= REQUEST =========================");
         log.info("{} {} \n", request.method(), request.url());
@@ -31,26 +31,22 @@ public class LoggingInterceptor implements Interceptor {
             log.info("Without body");
         }
         Response response = chain.proceed(request);
-        long t2 = System.nanoTime();
+        long t2 = System.currentTimeMillis();
         log.info("========================= RESPONSE ========================");
         log.info("Response from {}", response.request().url());
         log.info("Headers: \n{}", response.headers());
         MediaType contentType = response.body().contentType();
-        try {
-            contentString = contentType.toString();
-        } catch (NullPointerException e) {
-            contentString = "delete";
-        }
+        contentString = contentType.toString();
         if (contentString.contains("json")) {
             String content = response.body().string();
             log.info("Body: \n{}", content);
-            log.info("Response time: {} ms", (t2 - t1) / 1e6d);
+            log.info("Response time: {} ms", (t2 - t1));
             log.info("===========================================================");
             ResponseBody wrappedBody = ResponseBody.create(contentType, content);
             return response.newBuilder().body(wrappedBody).build();
         } else {
             log.info("Body: is a file");
-            log.info("Response time: {} ms", (t2 - t1) / 1e6d);
+            log.info("Response time: {} ms", (t2 - t1));
             log.info("===========================================================");
             return response;
         }

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 
-public class ImageInFavorites {
+public class FavouritesImage {
     private int id;
     private String url;
     private String sub_id;

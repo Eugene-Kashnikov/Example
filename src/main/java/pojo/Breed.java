@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 
-public class ResponseBySearchBread {
+public class Breed {
     private String id;
     private String name;
     private String cfa_url;

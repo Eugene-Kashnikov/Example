@@ -8,9 +8,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 
-public class ResponseBySearchImage {
+public class Image {
     private String id;
     private String url;
-    private List<ResponseBySearchBread> breeds;
-    private ResponseCategories categories;
+    private List<Breed> breeds;
+    private Category categories;
 }

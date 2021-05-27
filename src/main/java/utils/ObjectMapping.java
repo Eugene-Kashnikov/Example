@@ -7,7 +7,7 @@ public class ObjectMapping {
 
     private final ObjectMapper om;
 
-    public ObjectMapping(){
+    public ObjectMapping() {
         om = new ObjectMapper();
     }
 
