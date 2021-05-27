@@ -23,10 +23,10 @@ The project is broken into separate modules for API, UI testing. Each of these m
 
 To run all modules, navigate to terminal and run:
 
-mvn clean test -DauthKey="your personal key" allure:serve
+mvn clean test -DauthKey="your personal key" 
 
 Get your private key - https://docs.thecatapi.com/
 
 Get report - mvn allure:serve 
-or mvn allure:report
+
 
