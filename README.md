@@ -5,7 +5,6 @@ The project is based on a test task for testing TheCatApi
 Tools:
 * Maven
 * Testng
-* Webdrivermanager
 * Allure
 * OkHTTP
 * Lombok
