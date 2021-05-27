@@ -1,4 +1,5 @@
-# ExampleTest Framework (API, GUI)
+# TheCatApiTest Framework (API)
+
 The project is based on a test task for testing TheCatApi
 
 Tools:
