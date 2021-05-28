@@ -9,7 +9,8 @@ Tools:
 * OkHTTP
 * Lombok
 * Assertj
-* Requirements
+
+Requirements
 
 In order to utilise this project you need to have the following installed locally:
 
@@ -18,9 +19,9 @@ In order to utilise this project you need to have the following installed locall
 
 
 Usage
-The project is broken into separate modules for API, UI testing. Each of these modules can be utilised independently of the others using maven profiles.
+The project is intended for testing API as part of a test task, but it can also be easily expanded.
 
-To run all modules, navigate to terminal and run:
+To run tests in parallel , navigate to terminal and run:
 
 mvn clean test -Dauth.key="your personal key" 
 
