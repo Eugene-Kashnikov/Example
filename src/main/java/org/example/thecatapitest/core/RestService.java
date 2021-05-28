@@ -15,7 +15,7 @@ public class RestService {
     protected Request req;
     protected final ResponsePojo responsePojo = new ResponsePojo();
     protected static final String AUTH = "X-Api-Key";
-    public static String authValue = System.getProperty("authkey");
+    public static String authValue = System.getProperty("auth.key");
 
     public RestService() {
         this.client = new OkHttpClient.Builder()

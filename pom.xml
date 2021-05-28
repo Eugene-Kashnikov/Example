@@ -29,8 +29,8 @@
                     </argLine>
                     <systemProperties>
                         <property>
-                            <name>authkey</name>
-                            <value>${authkey}</value>
+                            <name>auth.key</name>
+                            <value>${auth.key}</value>
                         </property>
                     </systemProperties>
                 </configuration>

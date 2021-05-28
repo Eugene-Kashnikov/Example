@@ -22,7 +22,7 @@ The project is broken into separate modules for API, UI testing. Each of these m
 
 To run all modules, navigate to terminal and run:
 
-mvn clean test -DauthKey="your personal key" 
+mvn clean test -Dauth.key="your personal key" 
 
 Get your private key - https://docs.thecatapi.com/
 
